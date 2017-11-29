@@ -1,8 +1,10 @@
 package com.jony.hcsdemo3.controller;
 
+import com.jony.hcsdemo3.util.ClientConnect;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by jony on 11/28/17.
@@ -34,5 +36,22 @@ public class MainController {
             return "loginError";
         }
 
+    }
+
+    @RequestMapping(value = "/bind.do", method = RequestMethod.POST)
+    @ResponseBody
+    public String connectBind(String clientId, String connId){
+
+        boolean isSuccess = ClientConnect.getInstance().bindingConnect(clientId, connId);
+
+//        ajax 响应text和xml
+        return isSuccess+"";
+
+    }
+
+    @RequestMapping(value = "/send.do", method = RequestMethod.POST)
+    @ResponseBody
+    public String sendMessage(String clientId, String msg){
+        return "false";
     }
 }
