@@ -18,11 +18,16 @@
 
 <button type="button" onclick="startConn()">start connect</button>
 <button type="button" onclick="dropConn()">drop connect</button>
+<button type="button" onclick="bind()">bind</button>
 
 <p>status:<span id="status"></span></p>
 
 <div id="msgShow">
     <p>message:</p>
+</div>
+
+<div id="bindReturn">
+    <p>bind return:</p>>
 </div>
 </body>
 </html>

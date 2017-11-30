@@ -46,3 +46,15 @@ function cometProcess() {
         
     });
 }
+
+function bind() {
+    $.post("/hcsdemo3/bind.do",
+        {
+        clientId:"123456",
+            connId:"123"
+    },
+        function (data,status) {
+            $("#bindReturn").append("Data: " + data + "\nStatus: " + status);
+        }
+    );
+}

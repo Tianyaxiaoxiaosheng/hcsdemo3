@@ -1,6 +1,6 @@
 package com.jony.hcsdemo3.controller;
 
-import com.jony.hcsdemo3.util.ClientConnect;
+import com.jony.hcsdemo3.comet.CometConnect;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,7 +42,7 @@ public class MainController {
     @ResponseBody
     public String connectBind(String clientId, String connId){
 
-        boolean isSuccess = ClientConnect.getInstance().bindingConnect(clientId, connId);
+        boolean isSuccess = CometConnect.getInstance().bindingConnect(clientId, connId);
 
 //        ajax 响应text和xml
         return isSuccess+"";
