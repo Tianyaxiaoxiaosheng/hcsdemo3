@@ -1,0 +1,33 @@
+.tabbar-scrollable .toolbar-inner {
+    overflow:auto;
+    -webkit-overflow-scrolling:touch
+}
+.tabbar-scrollable .toolbar-inner::-webkit-scrollbar {
+    display:none!important;
+    width:0!important;
+    height:0!important;
+    -webkit-appearance:none;
+    opacity:0!important
+}
+.tabbar-scrollable a.link,.tabbar-scrollable a.tab-link {
+    width:auto;
+    -webkit-flex-shrink:0;
+    -ms-flex-negative:0;
+    flex-shrink:0
+}
+
+
+/*.laber-en .laber-zh{*/
+    /*display: block;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+.toolbar-inner>a{
+    /*display: block;*/
+    margin-left: 2pt;
+    margin-right: 10pt;
+}
+
+.for-col{
+    margin: 10pt;
+}

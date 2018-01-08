@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>push msg test</title>
     <script type="text/javascript" src="/hcsdemo3/js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="/hcsdemo3/js/comet4j.js"></script>

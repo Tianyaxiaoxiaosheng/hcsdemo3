@@ -18,6 +18,11 @@ public class MainController {
         return "comettest";
     }
 
+    @RequestMapping(value = "/i18ntest", method = RequestMethod.GET)
+    public String i18ntest(){
+        return "i18ntest";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(){
         return "login";
