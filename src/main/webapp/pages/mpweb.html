@@ -3,7 +3,8 @@
 <head>
     <!-- Required meta tags-->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- Color theme for statusbar -->
@@ -12,6 +13,8 @@
     <title>mpweb</title>
     <!-- Path to Framework7 Library CSS, Material Theme -->
     <link rel="stylesheet" href="/hcsdemo3/framework7/framework7.ios.min.css">
+    <!--theme-->
+    <link rel="stylesheet" href="/hcsdemo3/framework7/framework7.ios.colors.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="/hcsdemo3/css/mpweb.css">
 </head>
@@ -23,11 +26,62 @@
 <!-- First, we need to add Panel's overlay that will overlays app while panel is opened -->
 <div class="panel-overlay"></div>
 
-<!-- Left panel -->
-<div class="panel panel-left panel-reveal">
-    <div class="content-block">
-        <p>Left panel content goes here</p>
+<!-- Left panel, open way is reveal(侧栏从整个App的内容中移出) or cover(侧栏覆盖App的内容) -->
+<div class="panel panel-left panel-cover">
+
+    <div class="content-block-title">Navigation</div>
+    <div class="list-block">
+        <ul>
+            <li>
+                <a class="item-link item-content" name="lights" href="#">
+                    <div class="item-inner">
+                        <div class="item-title">灯光</div>
+                        <div class="item-after">lights</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="item-link item-content" name="aircon" href="#">
+                    <div class="item-inner">
+                        <div class="item-title">空调</div>
+                        <div class="item-after">Aircon</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="item-link item-content" name="service" href="#">
+                    <div class="item-inner">
+                        <div class="item-title">服务</div>
+                        <div class="item-after">service</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
+
+
+    <div class="content-block-title"></div>
+    <div class="list-block">
+        <ul>
+            <li>
+                <a class="item-link item-content" name="setting" href="#">
+                    <div class="item-inner">
+                        <div class="item-title">设置</div>
+                        <div class="item-after">Setting</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="item-link item-content" name="about" href="#">
+                    <div class="item-inner">
+                        <div class="item-title">关于</div>
+                        <div class="item-after">About</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
 
 </div>
 
@@ -82,20 +136,43 @@
                 </div>
                 <div class="center sliding">Service</div>
             </div>
+
+            <!--Navbar inner for setting page-->
+            <div class="navbar-inner cached" data-page="setting">
+                <div class="left sliding">
+                    <a class="back link" href="#">
+                        <i class="icon icon-back"></i>
+                        <span>Back</span>
+                    </a>
+                </div>
+                <div class="center sliding">Setting</div>
+            </div>
+
+            <!--Navbar inner for about page-->
+            <div class="navbar-inner cached" data-page="about">
+                <div class="left sliding">
+                    <a class="back link" href="#">
+                        <i class="icon icon-back"></i>
+                        <span>Back</span>
+                    </a>
+                </div>
+                <div class="center sliding">About</div>
+            </div>
         </div>
 
 
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-through toolbar-through">
-            <!-- Page, "data-page" contains page name -->
+
+            <!-- index Page, "data-page" contains page name -->
             <div data-page="index" class="page page-on-center">
                 <!-- Scrollable page content -->
                 <div class="page-content">
 
                     <div class="row">
-                         <!--Each "cell" has col-[widht in percents] class -->
+                        <!--Each "cell" has col-[widht in percents] class -->
                         <div class="col-100 for-col">
-                           <a href="#lights" class="button button-big button-round">灯光</a>
+                            <a href="#lights" class="button button-big button-round">灯光</a>
                         </div>
                         <div class="col-100 for-col">
                             <a href="#aircon" class="button button-big button-round">空调</a>
@@ -109,30 +186,28 @@
                 </div>
             </div>
 
+            <!--Lights page-->
             <div data-page="lights" class="page cached">
                 <div class="page-content">
-                    <!--<div class="content-block">-->
-                        <div class="toolbar tabbar tabbar-scrollable">
-                            <div class="toolbar-inner" id="lights-tabbar">
-                                <a href="#tab1" class="tab-link active">标签 1</a>
-                                <a href="#tab2" class="tab-link">标签 2</a>
-                                <a href="#tab3" class="tab-link">标签 3</a>
+                    <div class="toolbar tabbar tabbar-scrollable">
+                        <div class="toolbar-inner" id="lights-tabbar">
+                            <a href="#" class="tab-link"></a>
+                        </div>
+                    </div>
 
+                    <div class="tabs-animated-wrap">
+                        <div class="tabs" id="lights-tabs">
+                            <div class="tab">
+                                <div class="row">
+                                    <div class="col-33">
+                                        <a href="#" class="button button-round">ON</a>
+                                        <br/>
+                                        <span></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    <!--</div>-->
-
-                    <!--<div class="content-block">-->
-                        <div class="tabs-animated-wrap">
-                            <div class="tabs" id="lights-tabs">
-                                <div id="tab1" class="tab active">tab1</div>
-                                <div id="tab2" class="tab">tab2</div>
-                                <div id="tab3" class="tab">tab3</div>
-                            </div>
-                        </div>
-                    <!--</div>-->
-
-
+                    </div>
                 </div>
 
                 <!--bottom toolbar-->
@@ -144,15 +219,124 @@
                 </div>
             </div>
 
+            <!--aircon page-->
             <div data-page="aircon" class="page cached">
                 <div class="page-content">
-                    <p>aircon</p>
+                    <div class="toolbar tabbar tabbar-scrollable">
+                        <div class="toolbar-inner" id="aircon-tabbar">
+                            <a href="#" class="tab-link"></a>
+                        </div>
+                    </div>
+
+                    <div class="tabs-animated-wrap">
+                        <div class="tabs" id="aircon-tabs">
+                            <div class="tab">
+                                <div class="card aircon-show">
+                                    <div class="row">
+                                        <div class="col-33"><span>实际温度</span>(℃):</div>
+                                        <div class="col-33 temperature-col"><span class="temperature-show">26</span></div>
+                                        <div class="col-33"></div>
+
+                                        <div class="col-40">设置温度(℃):55</div>
+                                        <div class="col-30">模式: 制热</div>
+                                        <div class="col-30">风速: 中速</div>
+                                    </div>
+                                </div>
+
+                                <div class="card aircon-setting">
+                                    <div class="row no-gutter">
+                                        <div class="col-50"><span>制冷</span></div>
+                                        <div class="col-50">制热</div>
+
+                                        <div class="col-50">通风</div>
+                                        <div class="col-50">停止</div>
+
+                                        <div class="col-33">一</div>
+                                        <div class="col-33">温度</div>
+                                        <div class="col-33">十</div>
+
+                                        <div class="col-25">低速</div>
+                                        <div class="col-25">中速</div>
+                                        <div class="col-25">高速</div>
+                                        <div class="col-25">自动</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!--service page-->
             <div data-page="service" class="page cached">
                 <div class="page-content">
-                    <p>service</p>
+                    <p>
+                        <a href="tel//13764567708">移动WEB页面JS一键拨打号码咨询功能</a>
+                    </p>
+
+                </div>
+            </div>
+
+            <!--setting page-->
+            <div data-page="setting" class="page cached">
+                <div class="page-content">
+
+                    <div class="content-block-title">Themes</div>
+                    <div class="list-block" id="themes">
+                        <ul>
+                            <!-- Single radio input -->
+                            <li>
+                                <label class="label-radio item-content">
+                                    <!-- Checked by default -->
+                                    <input type="radio" name="themes-radio" value="white" checked="checked">
+                                    <div class="item-inner">
+                                        <div class="item-title" name="white">White</div>
+                                    </div>
+                                </label>
+                            </li>
+                            <!-- Another radio input -->
+                            <li>
+                                <label class="label-radio item-content">
+                                    <input type="radio" name="themes-radio" value="dark">
+                                    <div class="item-inner">
+                                        <div class="item-title" name="dark">Dark</div>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block-title">Language</div>
+                    <div class="list-block" id="language">
+                        <ul>
+                            <!-- Single radio input -->
+                            <li>
+                                <label class="label-radio item-content">
+                                    <!-- Checked by default -->
+                                    <input type="radio" name="language-radio" value="english" checked="checked">
+                                    <div class="item-inner">
+                                        <div class="item-title" name="english">English</div>
+                                    </div>
+                                </label>
+                            </li>
+                            <!-- Another radio input -->
+                            <li>
+                                <label class="label-radio item-content">
+                                    <input type="radio" name="language-radio" value="chinese">
+                                    <div class="item-inner">
+                                        <div class="item-title" name="chinese">Chinese</div>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--about page-->
+            <div data-page="about" class="page cached">
+                <div class="page-content">
+                    <p>about</p>
                 </div>
             </div>
         </div>
@@ -160,30 +344,76 @@
     </div>
 </div>
 
+<!--登录屏-->
+<!-- Should be a direct child of BODY -->
+<div class="login-screen modal-in">
+    <!-- Default view-page layout -->
+    <div class="view">
+        <div class="page">
+            <!-- page-content has additional login-screen content -->
+            <div class="page-content login-screen-content">
+                <div class="login-screen-title">My App</div>
+                <!-- Login form -->
+                <form>
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Username</div>
+                                    <div class="item-input">
+                                        <input type="text" name="username" placeholder="Username">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Password</div>
+                                    <div class="item-input">
+                                        <input type="password" name="password" placeholder="Password">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="#" class="item-link list-button">Sign In</a></li>
+                        </ul>
+                        <div class="list-block-label">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p><a href="#" class="close-login-screen">Close Login Screen</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Path to Framework7 Library JS-->
 <script type="text/javascript" src="/hcsdemo3/framework7/framework7.min.js"></script>
+<!--<script type="text/javascript" src="/hcsdemo3/js/jquery-3.2.1.js"></script>-->
 <!-- Path to your app js-->
 <script type="text/javascript" src="/hcsdemo3/js/mpweb.js"></script>
 
 <!--<script>-->
-    <!--var myApp = new Framework7();-->
+<!--var myApp = new Framework7();-->
 
-    <!--var $$ = Dom7;-->
+<!--var $$ = Dom7;-->
 
-    <!--// Add main View-->
-    <!--var mainView = myApp.addView('.view-main', {-->
-        <!--// Enable dynamic Navbar-->
-        <!--dynamicNavbar: true,-->
-        <!--// Enable Dom Cache so we can use all inline pages-->
-        <!--domCache: true-->
-    <!--});-->
+<!--// Add main View-->
+<!--var mainView = myApp.addView('.view-main', {-->
+<!--// Enable dynamic Navbar-->
+<!--dynamicNavbar: true,-->
+<!--// Enable Dom Cache so we can use all inline pages-->
+<!--domCache: true-->
+<!--});-->
 
 
-    <!--myApp.onPageInit("lights", function (page) {-->
-        <!--console.log("lights page init");-->
-    <!--});-->
+<!--myApp.onPageInit("lights", function (page) {-->
+<!--console.log("lights page init");-->
+<!--});-->
 
 
 <!--</script>-->

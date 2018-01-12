@@ -1,3 +1,4 @@
+/*标签页导航滚动*/
 .tabbar-scrollable .toolbar-inner {
     overflow:auto;
     -webkit-overflow-scrolling:touch
@@ -31,3 +32,45 @@
 .for-col{
     margin: 10pt;
 }
+
+/*灯光的Switch 布局*/
+div#lights-tabs div.row{
+    margin-top: 15pt;
+}
+div#lights-tabs div.col-33{
+    text-align: center;
+    margin-top: 10pt;
+    /*background-color: #8e8e93;*/
+}
+
+div#lights-tabs div.col-33 a{
+    margin: 0pt 3pt 0pt 3pt;
+}
+
+/*aircon*/
+div.aircon-show div.row div{
+    padding: 2pt;
+}
+div.aircon-show div.row div.temperature-col{
+    text-align: center;
+}
+div.aircon-show .temperature-show{
+    text-align: center;
+    font-size:70px;
+    margin: 70pt 0pt 90pt 0pt;
+    /*background-color: #4cd964;*/
+}
+
+div.aircon-setting{
+    margin-top: 30pt;
+}
+
+div.aircon-setting div.row div[class*="col-"]{
+    padding: 20px 10px 20px 10px;
+    text-align: center;
+    /*background: #fff;*/
+    border: 1px solid #ddd;
+    /*color: #000;*/
+}
+
+
