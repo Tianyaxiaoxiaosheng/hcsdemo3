@@ -43,6 +43,14 @@ public class MainController {
 
     }
 
+    @RequestMapping(value = "web/login.do", method = RequestMethod.POST)
+    @ResponseBody
+    public String webLogin(String username,String password) {
+
+        System.out.println("login:username:"+username+"password:"+password);
+        return "webLogin server";
+    }
+
     @RequestMapping(value = "/bind.do", method = RequestMethod.POST)
     @ResponseBody
     public String connectBind(String clientId, String connId){

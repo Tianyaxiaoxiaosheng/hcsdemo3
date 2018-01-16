@@ -20,7 +20,7 @@ var mainView = myApp.addView('.view-main', {
 window.onload = function () {
 
     // //初始化子页面
-    // console.log("Dom onload");
+    console.log("Dom onload");
     // initializeSubPage();
     //
     // //侧边栏路由使用主视图
@@ -55,18 +55,46 @@ myApp.onPageBeforeInit('setting', function (page) {
     addEventForSettingPage();
 });
 
+//此版本无该回调
+// myApp.onPageAfterAnimation('lights', function () {
+// });
+
+$$(document).on('pageInit', '.page[data-page="lights"]', function (e) {
+
+    console.log("pageInit: lights");
+    addEventForLightSwitch();
+});
+
 
 //login screen event,and open, opened, close, closed
+//无法调用，找替代
+$$("div.login-screen").on('opened', function () {  
+    console.log("login-screen opened");
+
+    //For login button add event
+    $$('#login').on('click', login());
+
+});
+
+$$('#login').on('click', function () {
+    console.log("clicked login .....");
+    login();
+});
+
 $$("div.login-screen").on('closed', function () {
     console.log("login-screen closed");
 
-    //初始化子页面
-    console.log("Dom onload");
+    //获取视图数据
+    getApartmentData();
+
+    //根据数据，初始化子页面
     initializeSubPage();
 
     //侧边栏路由使用主视图
     addEventForLeftPanel();
 });
+
+
 
 
 
@@ -77,10 +105,7 @@ function initializeSubPage() {
     myApp.showPreloader(); //开启，阻止用户操作
     console.log("start initializeSubPage");
 
-    //1.get data
-    getApartmentData();
-
-    //2.initialize
+    //initialize
     if (viewData != null)
     {
         //initialize lights page
@@ -196,27 +221,8 @@ function createdSwitchTab(tab, data) {
     // console.log(tab[0]);
 }
 
-//get apartment data
-function getApartmentData() {
-    var apartment = 1;
-    var apartment_url = "/hcsdemo3/properties/apartment"+apartment+".json";
-    
-    // $$.ajax(apartment_url, function (data) {
-    //
-    // })
-    $$.ajax({
-        url:apartment_url,
-        async:false,
-        success:function (data, status, xhr) {
 
-            viewData = JSON.parse(data);
-        },
-        error:function (xhr, status) {
-            console.log(status);
-        }
-    });
 
-}
 
 // 绑定ajax回调
 $$(document).on('ajaxStart', function (e) {
@@ -237,6 +243,10 @@ $$(document).on('ajaxComplete', function (e) {
     console.log("request complete");
     // myApp.hidePreloader();
 });
+
+
+
+
 
 //为侧边栏的导航添加事件
 function addEventForLeftPanel() {
@@ -284,4 +294,82 @@ function setLayoutThemes(themes_value) {
     $$("body")[0].className = "layout-"+themes_value;
 }
 
+//为开关按钮添加事件
+function addEventForLightSwitch() {
 
+    $$("#lights-tabs a.button").on('click', function () {
+
+        //点击事件在a元素上会响应两次（一般一个页面的第一次点击），可能是框架问题，暂不深究，只排除
+        //在电脑上没问题，但在所有移动设备上此处会拦截所有的
+        // if ($$(this).hasClass('active-state')){
+        //     return;
+        // }
+
+        // console.log(this);
+        // alert("123");
+
+        //set new value
+        var isOpenNew = !$$(this).prop('isOpen');
+        $$(this).prop('isOpen', isOpenNew);
+
+        // console.log($$(this).prop('isOpen'));
+
+        //make show
+        if ($$(this).prop('isOpen')){
+            this.text = "ON";
+            $$(this).addClass('active');
+        }else {
+            this.text = "OFF";
+            $$(this).removeClass('active');
+        }
+    });
+}
+
+
+
+
+
+//get apartment data
+function getApartmentData() {
+    console.log("Get Apartment Data");
+
+    var apartment = 1;
+    var apartment_url = "/hcsdemo3/properties/apartment"+apartment+".json";
+
+    // $$.ajax(apartment_url, function (data) {
+    //
+    // })
+    $$.ajax({
+        url:apartment_url,
+        async:false,
+        success:function (data, status, xhr) {
+
+            viewData = JSON.parse(data);
+        },
+        error:function (xhr, status) {
+            console.log(status);
+        }
+    });
+
+}
+
+//Sign In
+function login() {
+
+    var loginFormData = myApp.formToJSON('#login-form');
+    // console.log(loginFormData);
+    // console.log(JSON.stringify(loginFormData));
+    
+    var login_url = "/hcsdemo3/web/login.do";
+    
+    $$.ajax({
+        url:login_url,
+        async:false,
+        method:'POST',
+        data:loginFormData,
+        success:function (data, status, xhr) {
+            console.log("login success");
+            myApp.closeModal();
+        }
+    });
+}

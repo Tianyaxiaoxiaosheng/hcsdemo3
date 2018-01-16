@@ -1,6 +1,6 @@
 package com.jony.hcsdemo3.util;
 
-import com.jony.hcsdemo3.domain.SocketAddress;
+import com.jony.hcsdemo3.socket.SocketAddress;
 
 import java.util.HashMap;
 
