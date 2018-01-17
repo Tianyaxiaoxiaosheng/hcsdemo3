@@ -73,4 +73,36 @@ div.aircon-setting div.row div[class*="col-"]{
     /*color: #000;*/
 }
 
+/*测试page背景*/
+div[data-page="index"]{
+    /*background-image: url(/hcsdemo3/images/bg-index.jpg);*/
+    background-image: url(/hcsdemo3/images/bg-index.jpg);
+
+    /*background-color: #4cd964;*/
+}
+div[data-page="aircon"]{
+    background-image: url(/hcsdemo3/images/bg-index.jpg);
+}
+div[data-page="aircon"] div.toolbar{
+    background-color: black;
+
+    /*filter:alpha(opacity=50);//标准的css透明度，在大部分的标准浏览器Firefox, Safari, and Opera都有效*/
+    /*opacity:0.5;//兼容IE解决方案*/
+    filter:alpha(opacity=30);
+    -moz-opacity:0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+}
+
+
+/*测试服务页面的开关按钮*/
+div[data-page="service"] div.row{
+    margin-top: 15pt;
+}
+div[data-page="service"] div[class*="col-"]{
+    text-align: center;
+    margin-top: 10pt;
+    /*background-color: #8e8e93;*/
+}
+
 

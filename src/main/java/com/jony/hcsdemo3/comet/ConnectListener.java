@@ -1,5 +1,6 @@
 package com.jony.hcsdemo3.comet;
 
+import com.jony.hcsdemo3.socket.UdpUtil;
 import org.comet4j.core.CometConnection;
 import org.comet4j.core.CometContext;
 import org.comet4j.core.CometEngine;
@@ -29,6 +30,29 @@ public class ConnectListener implements ServletContextListener{
      */
     public void contextInitialized(ServletContextEvent servletContextEvent) {
 
+        System.out.println("ServletContextListener");
+
+        //启动udp接收
+        UdpUtil sharedUdpUtil = UdpUtil.getInstance();
+        sharedUdpUtil.startReceive();
+
+        //comet 初始化
+        cometSet();
+
+    }
+
+    /**
+     *Context Destroyed
+     */
+    public void contextDestroyed(ServletContextEvent servletContextEvent) {
+
+    }
+
+
+    /**
+     * comet 配置
+     */
+    private void cometSet(){
         //Comet4J上下文，负责初始化配置、引擎对象、连接器对象、消息缓存等。
         CometContext cometContext = CometContext.getInstance();
 
@@ -90,10 +114,4 @@ public class ConnectListener implements ServletContextListener{
         });
     }
 
-    /**
-     *Context Destroyed
-     */
-    public void contextDestroyed(ServletContextEvent servletContextEvent) {
-
-    }
 }

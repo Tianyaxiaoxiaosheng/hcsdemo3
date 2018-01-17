@@ -297,7 +297,7 @@ function setLayoutThemes(themes_value) {
 //为开关按钮添加事件
 function addEventForLightSwitch() {
 
-    $$("#lights-tabs a.button").on('click', function () {
+    $$("#lights-tabs img.img-sw").on('click', function () {
 
         //点击事件在a元素上会响应两次（一般一个页面的第一次点击），可能是框架问题，暂不深究，只排除
         //在电脑上没问题，但在所有移动设备上此处会拦截所有的
@@ -316,11 +316,9 @@ function addEventForLightSwitch() {
 
         //make show
         if ($$(this).prop('isOpen')){
-            this.text = "ON";
-            $$(this).addClass('active');
+            this.src="/hcsdemo3/images/ON3.png";
         }else {
-            this.text = "OFF";
-            $$(this).removeClass('active');
+            this.src="/hcsdemo3/images/OFF3.png";
         }
     });
 }
@@ -373,3 +371,4 @@ function login() {
         }
     });
 }
+

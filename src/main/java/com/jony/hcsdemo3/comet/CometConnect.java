@@ -45,7 +45,7 @@ public class CometConnect {
      */
     public boolean destroyedConnect(String connId){
 
-        String keyStr= findClientByConnectId(connId);
+        String keyStr= findClientIdByConnectId(connId);
 
         if (keyStr != null){
 
@@ -56,7 +56,11 @@ public class CometConnect {
         return false;
     }
 
-    private String findClientByConnectId (String connId){
+    /**
+     * @param connId comet connect id
+     * @return  client Id
+     */
+    private String findClientIdByConnectId (String connId){
 
         Iterator iterator = connList.entrySet().iterator();
         while (iterator.hasNext()){
