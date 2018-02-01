@@ -123,12 +123,13 @@ div#lights-tabs div.row{
 }
 div#lights-tabs div[class*="col-"]{
     text-align: center;
-    margin-top: 10pt;
+    margin-top: 20pt;
     /*background-color: #8e8e93;*/
 }
 
 div#lights-tabs div[class*="col-"] span{
     color: white;
+    margin-top: 2pt;
 }
 
 div#lights-tabs div[class*="col-"] a{
@@ -140,8 +141,17 @@ div#lights-tabs div[class*="col-"] a{
 div[data-page="service"]{
     background-image: url(/hcsdemo3/images/bg1.png);
 }
+
+div[data-page="service"] div.page-content{
+    position:relative;
+}
 div[data-page="service"] div.row{
-    margin-top: 80pt;
+    /*margin-top: 30%;*/
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
 }
 div[data-page="service"] div[class*="col-"]{
     text-align: center;
@@ -160,8 +170,18 @@ div[data-page="index"]{
 
     /*background-color: #4cd964;*/
 }
+div[data-page="index"] div.page-content{
+    position:relative;
+}
 div[data-page="index"] div.row{
-    margin-top: 30pt;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    margin-right: 5pt;
+    margin-left: 5pt;
+
 }
 div[data-page="index"] div[class*="col-"]{
     text-align: center;
