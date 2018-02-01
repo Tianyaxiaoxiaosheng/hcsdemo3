@@ -36,8 +36,8 @@
 
 @font-face {
 
-    font-family: SketchRockwell; /*这里是说明调用来的字体名字*/
-    src: url(‘SketchRockwell.ttf’); /*这里是字体文件路径*/
+    font-family: SimYou; /*这里是说明调用来的字体名字*/
+    src: url(/hcsdemo3/font/SIMYOU.TTF); /*这里是字体文件路径*/
 }
 
 
@@ -100,15 +100,23 @@ div[data-page="lights"]{
     background-image: url(/hcsdemo3/images/bg1.png);
 }
 div[data-page="lights"] div.toolbar{
-    background-color: black;
+    /*background-color: black;*/
 
     /*filter:alpha(opacity=50);//标准的css透明度，在大部分的标准浏览器Firefox, Safari, and Opera都有效*/
     /*opacity:0.5;//兼容IE解决方案*/
-    filter:alpha(opacity=30);
-    -moz-opacity:0.3;
-    -khtml-opacity: 0.3;
-    opacity: 0.3;
+    /*filter:alpha(opacity=30);*/
+    /*-moz-opacity:0.3;*/
+    /*-khtml-opacity: 0.3;*/
+    /*opacity: 0.3;*/
+
+    background-color:rgba(0,0,0,0.3);
+    position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
 }
+div[data-page="lights"] div.toolbar >*{
+    position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+}
+
 /*灯光的Switch 布局*/
 div#lights-tabs div.row{
     margin-top: 15pt;
@@ -161,7 +169,8 @@ div[data-page="index"] div[class*="col-"]{
 }
 div[data-page="index"] div[class*="col-"] span{
     color: white;
-    font-size: 1.8em;
+    font-size: 1.4em;
+    font-family: SimYou;
 }
 
 
@@ -169,8 +178,8 @@ div[data-page="index"] div[class*="col-"] span{
 /*顶部导航栏*/
 div.view div.navbar div.center{
     color: white;
-    font-size: 1.8em;
-    font-family: "幼圆";
+    font-size: 1.4em;
+    font-family: SimYou;
 }
 
 
