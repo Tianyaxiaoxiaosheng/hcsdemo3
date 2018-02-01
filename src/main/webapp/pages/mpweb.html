@@ -79,6 +79,14 @@
                     </div>
                 </a>
             </li>
+            <li>
+                <a class="item-link item-content" name="test" href="#">
+                    <div class="item-inner">
+                        <div class="item-title">测试</div>
+                        <div class="item-after">Test</div>
+                    </div>
+                </a>
+            </li>
         </ul>
     </div>
 
@@ -109,10 +117,10 @@
                 <div class="left sliding">
                     <a class="back link" href="#">
                         <i class="icon icon-back"></i>
-                        <span>Back</span>
+                        <span name="back">返回</span>
                     </a>
                 </div>
-                <div class="center sliding">Lights</div>
+                <div class="center sliding" name="lights">灯光</div>
             </div>
 
             <!--Navbar inner for aircon page-->
@@ -120,10 +128,10 @@
                 <div class="left sliding">
                     <a class="back link" href="#">
                         <i class="icon icon-back"></i>
-                        <span>Back</span>
+                        <span name="back">返回</span>
                     </a>
                 </div>
-                <div class="center sliding">Aircon</div>
+                <div class="center sliding" name="aircon">空调</div>
             </div>
 
             <!--Navbar inner for service page-->
@@ -131,10 +139,10 @@
                 <div class="left sliding">
                     <a class="back link" href="#">
                         <i class="icon icon-back"></i>
-                        <span>Back</span>
+                        <span name="back">返回</span>
                     </a>
                 </div>
-                <div class="center sliding">Service</div>
+                <div class="center sliding" name="service">服务</div>
             </div>
 
             <!--Navbar inner for setting page-->
@@ -142,10 +150,10 @@
                 <div class="left sliding">
                     <a class="back link" href="#">
                         <i class="icon icon-back"></i>
-                        <span>Back</span>
+                        <span name="back">返回</span>
                     </a>
                 </div>
-                <div class="center sliding">Setting</div>
+                <div class="center sliding" name="setting">设置</div>
             </div>
 
             <!--Navbar inner for about page-->
@@ -158,6 +166,17 @@
                 </div>
                 <div class="center sliding">About</div>
             </div>
+
+            <!--Navbar inner for test page-->
+            <div class="navbar-inner cached" data-page="test">
+                <div class="left sliding">
+                    <a class="back link" href="#">
+                        <i class="icon icon-back"></i>
+                        <span>Back</span>
+                    </a>
+                </div>
+                <div class="center sliding">测试</div>
+            </div>
         </div>
 
 
@@ -169,16 +188,35 @@
                 <!-- Scrollable page content -->
                 <div class="page-content">
 
+                    <!--<div class="row">-->
+                        <!--&lt;!&ndash;Each "cell" has col-[widht in percents] class &ndash;&gt;-->
+                        <!--<div class="col-100 for-col">-->
+                            <!--<a href="#lights" class="button button-big button-round">灯光</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-100 for-col">-->
+                            <!--<a href="#aircon" class="button button-big button-round">空调</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-100 for-col">-->
+                            <!--<a href="#service" class="button button-big button-round">服务</a>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+
                     <div class="row">
-                        <!--Each "cell" has col-[widht in percents] class -->
-                        <div class="col-100 for-col">
-                            <a href="#lights" class="button button-big button-round">灯光</a>
+                        <div class="col-50">
+                            <a href="#lights"><img src="/hcsdemo3/images/light.png"></a>
+                            <br/>
+                            <span>灯光</span>
                         </div>
-                        <div class="col-100 for-col">
-                            <a href="#aircon" class="button button-big button-round">空调</a>
+                        <div class="col-50">
+                            <a href="#aircon"><img src="/hcsdemo3/images/aircon.png"></a>
+                            <br/>
+                            <span>空调</span>
                         </div>
-                        <div class="col-100 for-col">
-                            <a href="#service" class="button button-big button-round">服务</a>
+                        <div class="col-50">
+                            <a href="#service"><img src="/hcsdemo3/images/service.png"></a>
+                            <br/>
+                            <span>服务</span>
                         </div>
 
                     </div>
@@ -199,10 +237,12 @@
                         <div class="tabs" id="lights-tabs">
                             <div class="tab">
                                 <div class="row">
-                                    <div class="col-33">
+                                    <div class="col-50">
                                         <img  class="img-sw" isOpen=false src="/hcsdemo3/images/OFF3.png">
                                         <br/>
-                                        <span></span>
+                                        <span class="en">english</span>
+                                        <br/>
+                                        <span class="zh">中文</span>
                                     </div>
                                 </div>
                             </div>
@@ -269,6 +309,30 @@
 
             <!--service page-->
             <div data-page="service" class="page cached">
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-50">
+                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_QL.png"><br/>
+                            <span>稍后</span>
+                        </div>
+                        <div class="col-50">
+                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_SOS.png"><br/>
+                            <span>求助</span>
+                        </div>
+                        <div class="col-50">
+                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_WR.png"><br/>
+                            <span>勿扰</span>
+                        </div>
+                        <div class="col-50">
+                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_WR.png"><br/>
+                            <span>勿扰</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--test page-->
+            <div data-page="test" class="page cached">
                 <div class="page-content">
                     <div class="row">
                         <div class="col-33">
@@ -390,7 +454,10 @@
             <!--about page-->
             <div data-page="about" class="page cached">
                 <div class="page-content">
-                    <p>about</p>
+                    <p>版本：1.0</p>
+                    <p>开发者：lingdianyixiao</p>
+                    <p>公司：YAVATOP</p>
+                    <p>反馈：fg@yavatop.com</p>
                 </div>
             </div>
         </div>

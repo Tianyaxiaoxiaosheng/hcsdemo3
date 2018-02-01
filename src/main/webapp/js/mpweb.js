@@ -42,6 +42,7 @@ myApp.onPageBeforeInit('aircon', function (page) {
 
 myApp.onPageBeforeInit('service', function (page) {
     console.log("service onPageBeforeInit");
+    addEventForServicePage();
 });
 
 //此方法不执行
@@ -167,7 +168,7 @@ function createdLabelNavigation(toolbar_inner, tabs, data) {
 
 
         clone_label.href ="#"+clone_tab.id;
-        clone_label.text = data[i].name;
+        clone_label.text = data[i].name_zh;
 
         //First active
         if (i == 0){
@@ -211,9 +212,9 @@ function createdSwitchTab(tab, data) {
 
         var clone_col = col_temp[0].cloneNode(true);
         // $$(clone_col).children("span").text;
-        var label = $$(clone_col).children("span");
+        var label_zh = $$(clone_col).children("span.zh");
         // label.val("123"); //无效
-        label.text(data[i].name);
+        label_zh.text(data[i].name_zh);
 
         // console.log(label);
         tab.children("div.row")[0].appendChild(clone_col);
@@ -323,7 +324,22 @@ function addEventForLightSwitch() {
     });
 }
 
+//为服务页添加事件
+function addEventForServicePage() {
+    $$('div[data-page="service"] img.img-sv').on('click', function () {
 
+        //set new value
+        var isOpenNew = !$$(this).prop('isOpen');
+        $$(this).prop('isOpen', isOpenNew);
+
+        //make show
+        if ($$(this).prop('isOpen')){
+            this.src="/hcsdemo3/images/Service_QL2.png";
+        }else {
+            this.src="/hcsdemo3/images/Service_QL.png";
+        }
+    });
+}
 
 
 

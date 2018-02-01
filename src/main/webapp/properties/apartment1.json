@@ -4,52 +4,69 @@
   "lights":[
     {
       "name":"bedRoom1",
+      "name_zh":"房间1",
       "switches":[
         {
           "id":1,
-          "name":"light1"
+          "name":"light1",
+          "name_zh":"灯1"
         },
         {
           "id":2,
-          "name":"light2"
+          "name":"light2",
+          "name_zh":"灯2"
         },
         {
           "id":3,
-          "name":"light3"
+          "name":"light3",
+          "name_zh":"灯3"
         }
       ]
     },
     {
       "name":"bedRoom2",
+      "name_zh":"房间2",
       "switches":[
         {
           "id":4,
-          "name":"light4"
+          "name":"light4",
+          "name_zh":"灯3"
         },
         {
           "id":5,
-          "name":"light5"
-        },
-        {
-          "id":6,
-          "name":"light6"
+          "name":"light5",
+          "name_zh":"灯3"
         }
       ]
     },
     {
       "name":"bedRoom3",
+      "name_zh":"房间3",
       "switches":[
         {
           "id":7,
-          "name":"light7"
+          "name":"light7",
+          "name_zh":"灯3"
         },
         {
           "id":8,
-          "name":"light8"
+          "name":"light8",
+          "name_zh":"灯3"
         },
         {
           "id":9,
-          "name":"light9"
+          "name":"light9",
+          "name_zh":"灯3"
+        },
+        {
+          "id":10,
+          "name":"light10",
+          "name_zh":"灯3"
+        },
+        {
+          "id":11,
+          "name":"light11",
+          "name_zh":"灯3"
         }
       ]
     }
@@ -57,10 +74,12 @@
   "aircon":[
     {
       "name":"room1",
+      "name_zh":"房间1",
       "id":1
     },
     {
       "name":"room2",
+      "name_zh":"房间2",
       "id":2
     }
   ]

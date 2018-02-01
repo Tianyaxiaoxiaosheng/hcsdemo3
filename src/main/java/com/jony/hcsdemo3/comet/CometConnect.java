@@ -51,6 +51,8 @@ public class CometConnect {
 
             connList.remove(keyStr);
             return true;
+        }else {
+            System.out.println("key find failed");
         }
 
         return false;
@@ -71,5 +73,20 @@ public class CometConnect {
         }
 
         return null;
+    }
+
+
+    /**
+     * Show comet connect list
+     */
+    public void showCometConnectList(){
+
+        System.out.println("comet connect list:");
+
+        Iterator iterator = connList.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry<String, String> entry = (Map.Entry<String, String>) iterator.next();
+            System.out.println("|"+entry.getKey()+"\t"+entry.getValue());
+        }
     }
 }

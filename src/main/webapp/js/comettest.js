@@ -2,11 +2,14 @@
  * Created by jony on 11/24/17.
  */
 
+
 $(document).ready(function () {
 
 
     setTimeout(cometProcess);
 });
+
+var cometConId = null;
 
 function startConn() {
     JS.Engine.start("/hcsdemo3/conn");
@@ -31,6 +34,7 @@ function cometProcess() {
         start : function (cId, channelList, engine) {
             // alert('连接已建立，连接ID为：' + cId);
             $("#status").text('连接已建立，连接ID为：' + cId);
+            cometConId = cId;
         },
         stop : function (cause, cId, url, engine) {
             // alert('连接已断开，连接ID为：' + cId + ',断开原因：' + cause + ',断开的连接地址：'+ url);
@@ -51,7 +55,7 @@ function bind() {
     $.post("/hcsdemo3/bind.do",
         {
         clientId:"123456",
-            connId:"123"
+            connId:cometConId
     },
         function (data,status) {
             $("#bindReturn").append("Data: " + data + "\nStatus: " + status);

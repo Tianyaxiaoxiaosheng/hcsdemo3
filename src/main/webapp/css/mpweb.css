@@ -33,20 +33,39 @@
     margin: 10pt;
 }
 
-/*灯光的Switch 布局*/
-div#lights-tabs div.row{
-    margin-top: 15pt;
-}
-div#lights-tabs div.col-33{
-    text-align: center;
-    margin-top: 10pt;
-    /*background-color: #8e8e93;*/
+
+@font-face {
+
+    font-family: SketchRockwell; /*这里是说明调用来的字体名字*/
+    src: url(‘SketchRockwell.ttf’); /*这里是字体文件路径*/
 }
 
-div#lights-tabs div.col-33 a{
-    margin: 0pt 3pt 0pt 3pt;
-}
 
+
+
+
+
+/*aircon*/
+div[data-page="aircon"]{
+    background-image: url(/hcsdemo3/images/bg1.png);
+}
+div[data-page="aircon"] div.toolbar{
+    /*background-color:#000000;*/
+
+    /*filter:alpha(opacity=50);//标准的css透明度，在大部分的标准浏览器Firefox, Safari, and Opera都有效*/
+    /*opacity:0.5;//兼容IE解决方案*/
+    /*filter:alpha(opacity=30);*/
+    background-color:rgba(0,0,0,0.3);
+    /*-moz-opacity:0.3;*/
+    /*-khtml-opacity: 0.3;*/
+    /*opacity: 0.3;*/
+
+    position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+}
+div[data-page="aircon"] div.toolbar >*{
+    position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+}
 /*aircon*/
 div.aircon-show div.row div{
     padding: 2pt;
@@ -73,17 +92,14 @@ div.aircon-setting div.row div[class*="col-"]{
     /*color: #000;*/
 }
 
-/*测试page背景*/
-div[data-page="index"]{
-    /*background-image: url(/hcsdemo3/images/bg-index.jpg);*/
-    background-image: url(/hcsdemo3/images/bg-index.jpg);
 
-    /*background-color: #4cd964;*/
+
+
+/*lights*/
+div[data-page="lights"]{
+    background-image: url(/hcsdemo3/images/bg1.png);
 }
-div[data-page="aircon"]{
-    background-image: url(/hcsdemo3/images/bg-index.jpg);
-}
-div[data-page="aircon"] div.toolbar{
+div[data-page="lights"] div.toolbar{
     background-color: black;
 
     /*filter:alpha(opacity=50);//标准的css透明度，在大部分的标准浏览器Firefox, Safari, and Opera都有效*/
@@ -93,13 +109,78 @@ div[data-page="aircon"] div.toolbar{
     -khtml-opacity: 0.3;
     opacity: 0.3;
 }
+/*灯光的Switch 布局*/
+div#lights-tabs div.row{
+    margin-top: 15pt;
+}
+div#lights-tabs div[class*="col-"]{
+    text-align: center;
+    margin-top: 10pt;
+    /*background-color: #8e8e93;*/
+}
+
+div#lights-tabs div[class*="col-"] span{
+    color: white;
+}
+
+div#lights-tabs div[class*="col-"] a{
+    margin: 0pt 3pt 0pt 3pt;
+}
+
+
+/*service*/
+div[data-page="service"]{
+    background-image: url(/hcsdemo3/images/bg1.png);
+}
+div[data-page="service"] div.row{
+    margin-top: 80pt;
+}
+div[data-page="service"] div[class*="col-"]{
+    text-align: center;
+    margin-top: 10pt;
+}
+div[data-page="service"] div[class*="col-"] span{
+    color: white;
+}
+
+
+
+/*index*/
+div[data-page="index"]{
+    /*background-image: url(/hcsdemo3/images/bg-index.jpg);*/
+    background-image: url(/hcsdemo3/images/bg1.png);
+
+    /*background-color: #4cd964;*/
+}
+div[data-page="index"] div.row{
+    margin-top: 30pt;
+}
+div[data-page="index"] div[class*="col-"]{
+    text-align: center;
+    margin-top: 20pt;
+}
+div[data-page="index"] div[class*="col-"] span{
+    color: white;
+    font-size: 1.8em;
+}
+
+
+
+/*顶部导航栏*/
+div.view div.navbar div.center{
+    color: white;
+    font-size: 1.8em;
+    font-family: "幼圆";
+}
+
+
 
 
 /*测试服务页面的开关按钮*/
-div[data-page="service"] div.row{
+div[data-page="test"] div.row{
     margin-top: 15pt;
 }
-div[data-page="service"] div[class*="col-"]{
+div[data-page="test"] div[class*="col-"]{
     text-align: center;
     margin-top: 10pt;
     /*background-color: #8e8e93;*/

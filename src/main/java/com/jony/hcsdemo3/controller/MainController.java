@@ -56,6 +56,7 @@ public class MainController {
     public String connectBind(String clientId, String connId){
 
         boolean isSuccess = CometConnect.getInstance().bindingConnect(clientId, connId);
+        CometConnect.getInstance().showCometConnectList();
 
 //        ajax 响应text和xml
         return isSuccess+"";

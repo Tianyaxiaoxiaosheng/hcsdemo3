@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="IRCSData@172.144.1.100" uuid="6f666d6c-7ca0-4574-be6e-f9ce2d4ad58f">
+      <driver-ref>sqlserver.jtds</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://172.144.1.100:1433/IRCSData</jdbc-url>
+    </data-source>
+  </component>
+</project>

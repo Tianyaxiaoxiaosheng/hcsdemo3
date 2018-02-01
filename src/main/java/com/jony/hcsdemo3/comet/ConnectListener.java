@@ -1,7 +1,6 @@
 package com.jony.hcsdemo3.comet;
 
 import com.jony.hcsdemo3.socket.UdpUtil;
-import org.comet4j.core.CometConnection;
 import org.comet4j.core.CometContext;
 import org.comet4j.core.CometEngine;
 import org.comet4j.core.event.*;
@@ -68,9 +67,11 @@ public class ConnectListener implements ServletContextListener{
             @Override
             public boolean handleEvent(ConnectEvent connectEvent) {
 
-                CometConnection conn = connectEvent.getConn();
-                String returnStr = "Wecome, id:"+conn.getId()+"/tip:"+conn.getClientIp();
-                CometContext.getInstance().getEngine().sendTo(CHANNEL_STATUS, conn, returnStr);
+//                CometConnection conn = connectEvent.getConn();
+
+                //Return a result where connect success for comet
+//                String returnStr = "Wecome, id:"+conn.getId()+"/tip:"+conn.getClientIp();
+//                CometContext.getInstance().getEngine().sendTo(CHANNEL_STATUS, conn, returnStr);
 
                 System.out.println("Client Connect: "+connectEvent.getConn().getId());
                 return false;
@@ -82,6 +83,10 @@ public class ConnectListener implements ServletContextListener{
             public boolean handleEvent(DropEvent dropEvent) {
 
                 System.out.println("Client Drop: "+dropEvent.getConn().getId());
+
+                //Destroyed connect where drop
+                boolean isSuccess = CometConnect.getInstance().destroyedConnect(dropEvent.getConn().getId());
+                CometConnect.getInstance().showCometConnectList();
                 return false;
             }
         });
@@ -91,6 +96,8 @@ public class ConnectListener implements ServletContextListener{
             public boolean handleEvent(DyingEvent dyingEvent) {
 
                 System.out.println("Client Dying: "+dyingEvent.getConn().getId());
+
+
                 return false;
             }
         });
