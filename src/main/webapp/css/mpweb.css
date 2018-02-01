@@ -66,7 +66,18 @@ div[data-page="aircon"] div.toolbar{
 div[data-page="aircon"] div.toolbar >*{
     position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
 }
-/*aircon*/
+/*ircon-show*/
+div.aircon-show{
+    background-color:rgba(0,0,0,0.4);
+    position:static;
+    *zoom:1;
+}
+div.aircon-show >*{
+    position: relative;
+
+    color: white;
+    font-family: SimYou;
+}
 div.aircon-show div.row div{
     padding: 2pt;
 }
@@ -186,6 +197,7 @@ div[data-page="index"] div.row{
 div[data-page="index"] div[class*="col-"]{
     text-align: center;
     margin-top: 20pt;
+    margin-bottom: 20pt;
 }
 div[data-page="index"] div[class*="col-"] span{
     color: white;

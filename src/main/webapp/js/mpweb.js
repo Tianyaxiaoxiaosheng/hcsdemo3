@@ -213,8 +213,11 @@ function createdSwitchTab(tab, data) {
         var clone_col = col_temp[0].cloneNode(true);
         // $$(clone_col).children("span").text;
         var label_zh = $$(clone_col).children("span.zh");
+        var label_en = $$(clone_col).children("span.en");
         // label.val("123"); //无效
         label_zh.text(data[i].name_zh);
+        label_en.text(data[i].name_en);
+
 
         // console.log(label);
         tab.children("div.row")[0].appendChild(clone_col);
