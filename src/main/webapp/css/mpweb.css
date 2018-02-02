@@ -78,31 +78,54 @@ div.aircon-show >*{
     color: white;
     font-family: SimYou;
 }
-div.aircon-show div.row div{
+div.aircon-show >div.row div{
     padding: 2pt;
 }
-div.aircon-show div.row div.temperature-col{
+div.aircon-show >div.row div.temperature-col{
     text-align: center;
 }
-div.aircon-show .temperature-show{
+div.aircon-show >div.row .temperature-show{
     text-align: center;
     font-size:70px;
     margin: 70pt 0pt 90pt 0pt;
     /*background-color: #4cd964;*/
 }
+div.aircon-show >div.row div.img-show{
+    text-align: center;
+
+    padding-right: 10pt;
+}
+
+div.aircon-show >div.row div.img-show img{
+    /*background-color: #5ac8fa;*/
+    margin-top: 10pt;
+}
 
 div.aircon-setting{
     margin-top: 30pt;
+    background-color: transparent;
 }
 
 div.aircon-setting div.row div[class*="col-"]{
-    padding: 20px 10px 20px 10px;
+    /*padding: 20px 10px 20px 10px;*/
     text-align: center;
+    /*margin-top: 10pt;*/
+    margin-bottom: 10pt;
     /*background: #fff;*/
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
     /*color: #000;*/
 }
+div.aircon-setting div.row div.one-col{
+    padding-top: 10pt;
+}
 
+div.aircon-setting div.row div[class*="col-"] span{
+    color: white;
+}
+
+div#aircon-tabs >div.tab{
+    overflow-y: scroll;
+}
 
 
 
@@ -159,6 +182,8 @@ div[data-page="service"] div.page-content{
 div[data-page="service"] div.row{
     /*margin-top: 30%;*/
 
+   width: 100%;
+
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -167,6 +192,7 @@ div[data-page="service"] div.row{
 div[data-page="service"] div[class*="col-"]{
     text-align: center;
     margin-top: 10pt;
+    margin-left: 5pt;
 }
 div[data-page="service"] div[class*="col-"] span{
     color: white;

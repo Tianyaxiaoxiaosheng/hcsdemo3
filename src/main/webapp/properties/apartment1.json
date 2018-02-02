@@ -62,6 +62,11 @@
           "id":9,
           "name_en":"WallLamp",
           "name_zh":"壁灯"
+        },
+        {
+          "id":10,
+          "name_en":"Toplights",
+          "name_zh":"顶灯"
         }
       ]
     }

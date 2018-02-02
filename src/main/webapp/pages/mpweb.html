@@ -262,33 +262,82 @@
                         <div class="tabs" id="aircon-tabs">
                             <div class="tab">
                                 <div class="card aircon-show">
-                                    <div class="row">
-                                        <div class="col-33"><span>实际温度</span>(℃):</div>
-                                        <div class="col-33 temperature-col"><span class="temperature-show">26</span></div>
-                                        <div class="col-33"></div>
+                                    <div class="row no-gutter">
+                                        <div class="col-40 temperature-col"><span class="temperature-show">26</span></div>
+                                        <div class="col-30 img-show"><img src="/hcsdemo3/images/show_code.png"></div>
+                                        <div class="col-30 img-show"><img src="/hcsdemo3/images/show_speed1.png"></div>
 
-                                        <div class="col-40">设置温度(℃):55</div>
-                                        <div class="col-30">模式: 制热</div>
-                                        <div class="col-30">风速: 中速</div>
+                                        <div class="col-100"><span>设置温度(℃):</span>26</div>
+
                                     </div>
                                 </div>
 
                                 <div class="card aircon-setting">
                                     <div class="row no-gutter">
-                                        <div class="col-50"><span>制冷</span></div>
-                                        <div class="col-50">制热</div>
 
-                                        <div class="col-50">通风</div>
-                                        <div class="col-50">停止</div>
+                                        <div class="col-33  one-col">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/speed_auto.png" aircon-btn-tag=4>
+                                            <br/>
+                                            <span>Auto</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/Shengwen.png" aircon-btn-tag=8>
+                                            <br/>
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/JiangWen.png" aircon-btn-tag=9>
+                                        </div>
+                                        <div class="col-33  one-col">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/speed_stop.png" aircon-btn-tag=0>
+                                            <br/>
+                                            <span>Stop</span>
+                                        </div>
 
-                                        <div class="col-33">一</div>
-                                        <div class="col-33">温度</div>
-                                        <div class="col-33">十</div>
+                                        <div class="col-33">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/speed_low.png" aircon-btn-tag=1>
+                                            <br/>
+                                            <span>Low speed</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/speed_medium.png" aircon-btn-tag=2>
+                                            <br/>
+                                            <span>Medium speed</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/speed_high.png" aircon-btn-tag=3>
+                                            <br/>
+                                            <span>High speed</span>
+                                        </div>
 
-                                        <div class="col-25">低速</div>
-                                        <div class="col-25">中速</div>
-                                        <div class="col-25">高速</div>
-                                        <div class="col-25">自动</div>
+                                        <div class="col-33">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/model_cooling.png" aircon-btn-tag=5>
+                                            <br/>
+                                            <span>Cooling</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/model_heating.png" aircon-btn-tag=6>
+                                            <br/>
+                                            <span>Heating</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <img class="img-ac" isSelected=false src="/hcsdemo3/images/model_ventilation.png" aircon-btn-tag=7>
+                                            <br/>
+                                            <span>Ventilation</span>
+                                        </div>
+
+
+                                        <!--<div class="col-50"><span>制冷</span></div>-->
+                                        <!--<div class="col-50">制热</div>-->
+
+                                        <!--<div class="col-50">通风</div>-->
+                                        <!--<div class="col-50">停止</div>-->
+
+                                        <!--<div class="col-33">一</div>-->
+                                        <!--<div class="col-33">温度</div>-->
+                                        <!--<div class="col-33">十</div>-->
+
+                                        <!--<div class="col-25">低速</div>-->
+                                        <!--<div class="col-25">中速</div>-->
+                                        <!--<div class="col-25">高速</div>-->
+                                        <!--<div class="col-25">自动</div>-->
                                     </div>
                                 </div>
                             </div>
@@ -302,20 +351,24 @@
                 <div class="page-content">
                     <div class="row">
                         <div class="col-50">
-                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_QL.png"><br/>
+                            <img class="img-sv" isSelected=false tag=0 src="/hcsdemo3/images/Service_QL.png">
+                            <br/>
+                            <span>清理</span>
+                        </div>
+                        <div class="col-50">
+                            <img class="img-sv" isSelected=false tag=1 src="/hcsdemo3/images/Service_WR.png">
+                            <br/>
+                            <span>勿扰</span>
+                        </div>
+                        <div class="col-50">
+                            <img class="img-sv" isSelected=false tag=2 src="/hcsdemo3/images/Service_SH.png">
+                            <br/>
                             <span>稍后</span>
                         </div>
                         <div class="col-50">
-                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_SOS.png"><br/>
+                            <img class="img-sv" isSelected=false tag=3 src="/hcsdemo3/images/Service_SOS.png">
+                            <br/>
                             <span>求助</span>
-                        </div>
-                        <div class="col-50">
-                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_WR.png"><br/>
-                            <span>勿扰</span>
-                        </div>
-                        <div class="col-50">
-                            <img class="img-sv" isSelected=false src="/hcsdemo3/images/Service_WR.png"><br/>
-                            <span>勿扰</span>
                         </div>
                     </div>
                 </div>

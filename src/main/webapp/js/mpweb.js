@@ -8,6 +8,15 @@ var $$ = Dom7;
 
 var viewData = null;
 
+var serviceBaseImgLoc = "/hcsdemo3/images/";
+var serviceImg1Array = new Array("Service_QL.png", "Service_WR.png", "Service_SH.png", "Service_SOS.png");
+var serviceImg2Array = new Array("Service_QL2.png", "Service_WR2.png", "Service_SH2.png", "Service_SOS2.png");
+var airconBaseImgLoc = "/hcsdemo3/images/";
+var airconImg1Array = new Array("speed_stop.png", "speed_low.png", "speed_medium.png", "speed_high.png", "speed_auto.png"
+    , "model_cooling.png", "model_heating.png", "model_ventilation.png", "Shengwen.png", "JiangWen.png");
+var airconImg2Array = new Array("speed_stop_2.png", "speed_low_2.png", "speed_medium_2.png", "speed_high_2.png", "speed_auto_2.png"
+    , "model_cooling_2.png", "model_heating_2.png", "model_ventilation_2.png", "Shengwen2.png", "JiangWen2.png");
+
 // Add main View
 var mainView = myApp.addView('.view-main', {
     // Enable dynamic Navbar
@@ -38,6 +47,7 @@ myApp.onPageBeforeInit('lights', function (page) {
 
 myApp.onPageBeforeInit('aircon', function (page) {
     console.log("aircon onPageBeforeInit");
+    addEventForAirconPage();
 });
 
 myApp.onPageBeforeInit('service', function (page) {
@@ -329,19 +339,65 @@ function addEventForLightSwitch() {
 
 //为服务页添加事件
 function addEventForServicePage() {
+
+
     $$('div[data-page="service"] img.img-sv').on('click', function () {
 
         //set new value
-        var isOpenNew = !$$(this).prop('isOpen');
-        $$(this).prop('isOpen', isOpenNew);
+        var isSelectedNew = !$$(this).prop('isSelected');
+        $$(this).prop('isSelected', isSelectedNew);
+
+        //自定义属性获取
+        // console.log($$(this).attr('tag'));
+        // console.log(this.getAttribute('tag'));
+
+        var tag = this.getAttribute('tag');
 
         //make show
-        if ($$(this).prop('isOpen')){
-            this.src="/hcsdemo3/images/Service_QL2.png";
+        if ($$(this).prop('isSelected')){
+
+            this.src=serviceBaseImgLoc+serviceImg2Array[tag];
         }else {
-            this.src="/hcsdemo3/images/Service_QL.png";
+
+            this.src=serviceBaseImgLoc+serviceImg1Array[tag];
         }
     });
+}
+
+//为空调页添加点击事件
+function addEventForAirconPage() {
+    $$('div.aircon-setting img.img-ac').on('click', function () {
+
+        //set new value
+        var isSelectedNew = !$$(this).prop('isSelected');
+        $$(this).prop('isSelected', isSelectedNew);
+
+
+        var tag = this.getAttribute('aircon-btn-tag');
+        console.log(tag);
+
+        //make show
+        // if ($$(this).prop('isSelected')){
+        //
+        //     this.src=airconBaseImgLoc+airconImg2Array[tag];
+        // }else {
+        //
+        //     this.src=airconBaseImgLoc+airconImg1Array[tag];
+        // }
+    });
+    $$('div.aircon-setting img.img-ac').on('touchstart', function () {
+
+        var tag = this.getAttribute('aircon-btn-tag');
+
+        this.src=airconBaseImgLoc+airconImg2Array[tag];
+    });
+    $$('div.aircon-setting img.img-ac').on('touchend', function () {
+
+        var tag = this.getAttribute('aircon-btn-tag');
+
+        this.src=airconBaseImgLoc+airconImg1Array[tag];
+    });
+
 }
 
 
