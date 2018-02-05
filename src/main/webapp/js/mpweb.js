@@ -8,6 +8,15 @@ var $$ = Dom7;
 
 var viewData = null;
 
+// Add main View
+var mainView = myApp.addView('.view-main', {
+    // Enable dynamic Navbar
+    dynamicNavbar: true,
+    // Enable Dom Cache so we can use all inline pages
+    domCache: true
+});
+
+
 var serviceBaseImgLoc = "/hcsdemo3/images/";
 var serviceImg1Array = new Array("Service_QL.png", "Service_WR.png", "Service_SH.png", "Service_SOS.png");
 var serviceImg2Array = new Array("Service_QL2.png", "Service_WR2.png", "Service_SH2.png", "Service_SOS2.png");
@@ -17,13 +26,6 @@ var airconImg1Array = new Array("speed_stop.png", "speed_low.png", "speed_medium
 var airconImg2Array = new Array("speed_stop_2.png", "speed_low_2.png", "speed_medium_2.png", "speed_high_2.png", "speed_auto_2.png"
     , "model_cooling_2.png", "model_heating_2.png", "model_ventilation_2.png", "Shengwen2.png", "JiangWen2.png");
 
-// Add main View
-var mainView = myApp.addView('.view-main', {
-    // Enable dynamic Navbar
-    dynamicNavbar: true,
-    // Enable Dom Cache so we can use all inline pages
-    domCache: true
-});
 
 //dom loading finish event
 window.onload = function () {
